@@ -14,9 +14,9 @@ A simple Alexa skill to reveal timetable for UCL students. Simply say "Alexa, op
  3. You need to locate your UCL ICS academic calender link. To do this: 
   i. Log into your [timetable](https://timetable.ucl.ac.uk/tt/homePage.do) with your UCL username and password.
   ii. Click on the subcribe link on the top RHS of the calender:
-  [subscribe](img/subscribe.png)
+  ![subscribe](img/subscribe.png)
   iii. Copy and paste the URL given and save it, you'll need it later.
-  [url](img/url.png)
+  ![url](img/url.png)
   * note- this should work for any ICS calender or any universtiy, not just UCL.*
 
 ### Setup 
@@ -70,7 +70,7 @@ pip install flask flask-ask unidecode ics zappa awscli
 
 Remember that step earlier where we ran the run.py file to check that everything was working? We can use NGROK to route that local server so that Alexa can use it (this is instead of AWS Lambda)
 
- 1. download https://ngrok.com/download
+ 1. Download https://ngrok.com/download
  2. Put ngrok in the directory of your app
  3. Make sure that FLASK server is running again, `python run.py`
  4. Run ngrok with `ngrok http 5000`
