@@ -24,25 +24,26 @@ A simple Alexa skill to reveal timetable for UCL students. Simply say "Alexa, op
 ```
 mkdir ~/myUCL
 ```
- 2. We need a virtual environment for our Python folder to go in- let's install it. (* note - this is especially important in this tutorial because later we use Zappa to configure the automatic upload to AWS lambda)
+ 2. Let's clone the github repo (don't forget the dot)
+```
+cd ~/myUCL; git clone https://github.com/rmsmith88/myUCL.git .
+```
+
+ 3. We need a virtual environment for our Python folder to go in- let's install it. (* note - this is especially important in this tutorial because later we use Zappa to configure the automatic upload to AWS lambda)
 ```
 pip install virtualenv
 ```
- 3. Now we need to create the virtual environment:
+ 4. Now we need to create the virtual environment:
 ```
 virtualenv ~/myUCL/py27
 ```
- 4. We must activate this virtual environment so this new python folder is being used. As this command is run you'll notice the virtual environment name, in this case py27 will proceed the bash symbol.
+ 5. We must activate this virtual environment so this new python folder is being used. As this command is run you'll notice the virtual environment name, in this case py27 will proceed the bash symbol.
 ```
-source ~/myUCL/bin/activate
+source ~/myUCL/py27/bin/activate
 ```
- 5. We are now ready to install the libaries with PIP
+ 6. We are now ready to install the libaries with PIP
 ```
 pip install flask flask-ask unidecode ics zappa awscli
-```
- 6. Let's clone the github repo (don't forget the dot)
-```
-cd ~/myUCL; clone https://github.com/rmsmith88/myUCL.git .
 ```
  7. Copy the example json config file found in configs folder and create a new file. Name the new file `config.json`. If you open this file you need to paste in the UCL ICS ID that you found earlier as a prereq. Please remove the `webcal://` part and have it in the same format as the example.
  
@@ -64,8 +65,6 @@ cd ~/myUCL; clone https://github.com/rmsmith88/myUCL.git .
 [![Setup](https://img.youtube.com/vi/mjWV4R2P4ks/0.jpg)](https://www.youtube.com/watch?v=mjWV4R2P4ks)
 
 
-
-TODO DELETE ~/MYUCL
 
 #### Option2 - test locally using NGROK instead of Zappa 
 
