@@ -62,10 +62,43 @@ pip install flask flask-ask unidecode ics zappa awscli
  
 
 ### Setting up AWSCLI & Zappa
+Follow this YouTube tutorial to setup AWSCLI and Zappa
 [![Setup](https://img.youtube.com/vi/mjWV4R2P4ks/0.jpg)](https://www.youtube.com/watch?v=mjWV4R2P4ks)
 
+### Creating the Alexa Skill
+If you've followed all of the YouTube tutorial above you'll have gone on to create the Alexa skill. I will assume you've not done this:
+ 1. Goto Alex Skill website. 
+ 
+ 2. Add the name and innvocation name as myUCL. Click next.
+ ![skill name](img/skill_name.png)
+ 3. Set the intents to as follows:
+ ```
+ {
+    "intents": [{
+        "intent": "YesIntent"
+    },
+                
+    {
+        "intent": "NoIntent"
+    }]
+}
+```
+ 4. Set the sample utterances:  
+  ```  
+YesIntent sure
+YesIntent yes
+
+NoIntent no
+NoIntent go away
+  ```
+ 5. For ENDPOINT you need to use HTTPS and use the AWS Lambda link that Zappa gave you OR you can use NGROK endpoint if you are testing locally. 
+![endpoint](img/endpoint.png)
+Don't forget on the next page to select the Certificate as `My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority`
 
 
+That should be it! It should now work on your Alexa as a developer skill. To enable it open your Alexa app and select skills.
+ 
+ 
 #### Option2 - test locally using NGROK instead of Zappa 
 
 Remember that step earlier where we ran the run.py file to check that everything was working? We can use NGROK to route that local server so that Alexa can use it (this is instead of AWS Lambda)
@@ -81,5 +114,5 @@ Remember that step earlier where we ran the run.py file to check that everything
 
 ## Todo
  1. Add functionality (deadlines, command multiple weeks, date queries etc)
- 2. Save cal to disk rather than mutliple 
+ 2. Save cal to disk rather than requesting each time.
  3. TBC
